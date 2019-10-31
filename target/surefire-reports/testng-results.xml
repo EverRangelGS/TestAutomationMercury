@@ -1,84 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="3" total="4" passed="0">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="AllTestsSuite" duration-ms="35154" started-at="2019-10-30T00:03:32Z" finished-at="2019-10-30T00:04:07Z">
+  <suite name="AllTestsSuite" duration-ms="31288" started-at="2019-10-31T19:28:48Z" finished-at="2019-10-31T19:29:19Z">
     <groups>
     </groups>
-    <test name="My First Selenium TestNG Test" duration-ms="35154" started-at="2019-10-30T00:03:32Z" finished-at="2019-10-30T00:04:07Z">
+    <test name="My First Selenium TestNG Test" duration-ms="31288" started-at="2019-10-31T19:28:48Z" finished-at="2019-10-31T19:29:19Z">
       <class name="test.Tests">
-        <test-method status="PASS" signature="setupTest()[pri:0, instance:test.Tests@1e67b872]" name="setupTest" is-config="true" duration-ms="33956" started-at="2019-10-30T00:03:32Z" finished-at="2019-10-30T00:04:06Z">
+        <test-method status="PASS" signature="setupTest()[pri:0, instance:test.Tests@1e67b872]" name="setupTest" is-config="true" duration-ms="27441" started-at="2019-10-31T19:28:48Z" finished-at="2019-10-31T19:29:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method status="FAIL" signature="loginIncorrecto()[pri:0, instance:test.Tests@1e67b872]" name="loginIncorrecto" duration-ms="27" started-at="2019-10-30T00:04:06Z" finished-at="2019-10-30T00:04:06Z">
-          <exception class="org.openqa.selenium.UnhandledAlertException">
-            <message>
-              <![CDATA[unexpected alert open: {Alert text : Hola Ever}
-  (Session info: chrome=78.0.3904.70): Hola Ever
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
-System info: host: 'EKT1607108', ip: '10.51.206.216', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: E:\Users\efloresr\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62126}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2f2b2b44de4e448b8df13f205c343865
-*** Element info: {Using=name, value=userName}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Hola Ever}
-  (Session info: chrome=78.0.3904.70): Hola Ever
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
-System info: host: 'EKT1607108', ip: '10.51.206.216', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: E:\Users\efloresr\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62126}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2f2b2b44de4e448b8df13f205c343865
-*** Element info: {Using=name, value=userName}
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:395)
-at org.openqa.selenium.By$ByName.findElement(By.java:284)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
-at pages.PageLogin.login(PageLogin.java:33)
-at test.Tests.loginIncorrecto(Tests.java:53)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
+        <test-method status="PASS" signature="loginIncorrecto()[pri:0, instance:test.Tests@1e67b872]" name="loginIncorrecto" duration-ms="2688" started-at="2019-10-31T19:29:15Z" finished-at="2019-10-31T19:29:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginIncorrecto -->
-        <test-method status="PASS" signature="teardownTest()[pri:0, instance:test.Tests@1e67b872]" name="teardownTest" is-config="true" duration-ms="1026" started-at="2019-10-30T00:04:06Z" finished-at="2019-10-30T00:04:07Z">
+        <test-method status="PASS" signature="teardownTest()[pri:0, instance:test.Tests@1e67b872]" name="teardownTest" is-config="true" duration-ms="1049" started-at="2019-10-31T19:29:18Z" finished-at="2019-10-31T19:29:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownTest -->

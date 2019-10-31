@@ -1,16 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 35.91 s <<< FAILURE! - in TestSuite
-loginIncorrecto(test.Tests)  Time elapsed: 0.035 s  <<< FAILURE!
-org.openqa.selenium.UnhandledAlertException: 
-unexpected alert open: {Alert text : Hola Ever}
-  (Session info: chrome=78.0.3904.70): Hola Ever
-Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
-System info: host: 'EKT1607108', ip: '10.51.206.216', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: E:\Users\efloresr\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62126}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2f2b2b44de4e448b8df13f205c343865
-*** Element info: {Using=name, value=userName}
-	at test.Tests.loginIncorrecto(Tests.java:53)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.022 s - in TestSuite

@@ -1,5 +1,6 @@
 package test;
 
+import helpers.CambiarTabs;
 import helpers.Helpers;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -43,17 +44,7 @@ public class Tests {
     //-----------------------------------Tests-----------------------------------
     @Test(enabled = true)
     public void loginIncorrecto () {
-        //Ejecuciones de codigo de JavaScript
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor)driver;
-        String googleWindow = "window.open('http://www.google.com')";
-        javascriptExecutor.executeScript(googleWindow);
-        tabs = new ArrayList<>(driver.getWindowHandles());
-
-        //Cambio entre tabs
-        Helpers helper = new Helpers();                                                helper.waitSeconds(1);
-        driver.switchTo().window(tabs.get(0));                                         helper.waitSeconds(1);
-        driver.switchTo().window(tabs.get(1)).navigate().to("http://www.bbva.mx");  helper.waitSeconds(1);
-        driver.switchTo().window(tabs.get(0));
+        //CambiarTabs cambiarTabs = new CambiarTabs(driver); cambiarTabs.intercalarTabs();
 
         //Test
         PageLogin pageLogin = new PageLogin(driver);

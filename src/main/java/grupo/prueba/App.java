@@ -1,4 +1,4 @@
-package grupoPrueba;
+package grupo.prueba;
 
 /**
  * Hello world!
