@@ -6,6 +6,9 @@ import org.omg.Messaging.SyncScopeHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.util.List;
@@ -16,21 +19,27 @@ public class PageLogin {
     //-----------------------------------Global Variables-----------------------------------
     //Declare a Webdriver variable
     private WebDriver driver;
-    private By userField;
+
+    @FindBy(how = How.NAME, using = "userName")
+    private WebElement userFieldElement;
+    //private By userField;
     private By passField;
     private By loginBtn;
     private By fields;
 
     public PageLogin(WebDriver driver) {
         this.driver = driver;
-        userField = By.name("userName");
+        //userField = By.name("userName");
         passField = By.cssSelector("input[name='password']");
         loginBtn = By.name("login");
         fields = By.tagName("input");
+
+        PageFactory.initElements(driver,this);
     }
 
     public void login(String user, String pass){
-        driver.findElement(userField).sendKeys(user);
+        userFieldElement.sendKeys(user);
+        //driver.findElement(userField).sendKeys(user);
         driver.findElement(passField).sendKeys(pass);
         driver.findElement(loginBtn).click();
         //Helpers helper = new Helpers(); helper.waitSeconds(3);
@@ -48,7 +57,7 @@ public class PageLogin {
     public void verifyFields(){
         List<WebElement> loginFiels = driver.findElements(fields); //findElements genera una lista de elementos <WebElements>
         System.out.println("Cantidad de campos login: "+loginFiels.size());
-        Assert.assertTrue(loginFiels.size()==5);
+        Assert.assertEquals(loginFiels.size(),5);
     }
 
 }
