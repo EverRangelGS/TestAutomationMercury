@@ -1,8 +1,8 @@
 package test;
 
-import helpers.CambiarTabs;
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -12,10 +12,11 @@ import pages.PageFactoryLogin;
 import pages.PageLogin;
 import pages.PageLogon;
 import pages.PageReservation;
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class Tests {
+public class TestsHeadLess {
 
     //-----------------------------------Global Variables-----------------------------------
     //Declare a Webdriver variable
@@ -28,19 +29,20 @@ public class Tests {
     //-----------------------------------Test Setup-----------------------------------
     @BeforeMethod
     public void setupTest () {
-        DesiredCapabilities caps = new DesiredCapabilities(); //since selenium 3.0
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        /* driver.manage().window().fullscreen();
-           driver.manage().window().setSize(new Dimension(800,700));
-           driver.manage().window().setPosition(new Point(50,50)); */
+
+        //Chrome Options
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        //chromeOptions.addArguments("--whitelist-ips 0.0.0.0");
+        //chromeOptions.addArguments("--port=9515");
+
+        driver = new ChromeDriver(chromeOptions);
         driver.navigate().to(testURL);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     //-----------------------------------Tests-----------------------------------
-    @Test(enabled = false, description = "Login Incorrecto")
+    @Test(enabled = true, description = "Login Incorrecto")
     public void loginIncorrecto () {
         //CambiarTabs cambiarTabs = new CambiarTabs(driver); cambiarTabs.intercalarTabs();
 
