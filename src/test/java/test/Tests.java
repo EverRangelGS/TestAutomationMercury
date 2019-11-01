@@ -1,18 +1,16 @@
 package test;
 
 import helpers.CambiarTabs;
-import helpers.Helpers;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.PageFactoryLogin;
 import pages.PageLogin;
 import pages.PageLogon;
 import pages.PageReservation;
-
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -29,14 +27,13 @@ public class Tests {
     //-----------------------------------Test Setup-----------------------------------
     @BeforeMethod
     public void setupTest () {
-        DesiredCapabilities caps = new DesiredCapabilities(); //desde selenium 3.0
+        DesiredCapabilities caps = new DesiredCapabilities(); //since selenium 3.0
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
-
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        //driver.manage().window().fullscreen();
-        //driver.manage().window().setSize(new Dimension(800,700));
-        //driver.manage().window().setPosition(new Point(50,50));
+        /* driver.manage().window().fullscreen();
+           driver.manage().window().setSize(new Dimension(800,700));
+           driver.manage().window().setPosition(new Point(50,50)); */
         driver.navigate().to(testURL);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
@@ -46,8 +43,7 @@ public class Tests {
     public void loginIncorrecto () {
         //CambiarTabs cambiarTabs = new CambiarTabs(driver); cambiarTabs.intercalarTabs();
 
-        //Test
-        PageLogin pageLogin = new PageLogin(driver);
+        PageFactoryLogin pageLogin = new PageFactoryLogin(driver);
         PageLogon pageLogon = new PageLogon(driver);
         pageLogin.login("user","user");
         pageLogon.assertPage();
