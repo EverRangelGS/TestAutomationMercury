@@ -39,7 +39,7 @@ public class Tests {
     }
 
     //-----------------------------------Tests-----------------------------------
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void loginIncorrecto () {
         //CambiarTabs cambiarTabs = new CambiarTabs(driver); cambiarTabs.intercalarTabs();
 
@@ -72,6 +72,12 @@ public class Tests {
     public void pruebaCantidadDeCampos () {
         PageLogin pageLogin = new PageLogin(driver);
         pageLogin.verifyFields();
+    }
+
+    @Test(enabled = true)
+    public void pruebaVerificarTitulo () {
+        PageFactoryLogin pageLogin = new PageFactoryLogin(driver);
+        pageLogin.verifyTitle();
     }
 
     //-----------------------------------Test TearDown-----------------------------------

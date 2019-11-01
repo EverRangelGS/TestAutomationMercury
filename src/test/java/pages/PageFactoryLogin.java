@@ -15,13 +15,13 @@ public class PageFactoryLogin {
     private WebDriver driver;
 
     //PageFactory annotations
-    @FindBy(how = How.NAME, using = "userName")
+    @FindBy(name= "userName")
     private WebElement userFieldElement;
-    @FindBy(how=How.NAME, using = "password")
+    @FindBy(name = "password")
     private WebElement passFieldElement;
-    @FindBy(how= How.NAME, using = "login")
+    @FindBy(name = "login")
     private WebElement loginBtnElement;
-    @FindBy(how = How.TAG_NAME, using = "input")
+    @FindBy(tagName = "input")
     private List<WebElement> fields;
 
     public PageFactoryLogin(WebDriver driver) {
@@ -46,5 +46,11 @@ public class PageFactoryLogin {
     public void verifyFields(){
         System.out.println("Cantidad de campos login: "+fields.size());
         Assert.assertEquals(fields.size(),5);
+    }
+
+    public void verifyTitle(){
+        String title = driver.getTitle();
+        userFieldElement.sendKeys(title);
+        Assert.assertEquals("Welcome: Mercury Tours",title);
     }
 }
