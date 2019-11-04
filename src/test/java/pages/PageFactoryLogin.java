@@ -14,7 +14,18 @@ public class PageFactoryLogin {
     //-----------------------------------Global Variables-----------------------------------
     private WebDriver driver;
 
-    //PageFactory annotations
+    //PageFactory annotations large
+    /*
+    @FindBy(how = How.NAME, using = "userName")
+    private WebElement userFieldElement;
+    @FindBy(how = How.NAME, using = "password")
+    private WebElement passFieldElement;
+    @FindBy(how = How.NAME, using = "login")
+    private WebElement loginBtnElement;
+    @FindBy(how = How.TAG_NAME, using = "input")
+    private List<WebElement> fields; */
+
+    //PageFactory annotations short
     @FindBy(name= "userName")
     private WebElement userFieldElement;
     @FindBy(name = "password")
