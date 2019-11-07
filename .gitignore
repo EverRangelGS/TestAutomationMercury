@@ -13,8 +13,7 @@ bw-outputs/
 .scannerwork
 
 # IntelliJ
-#.idea
-.idea/sonarlint/
+.idea
 *.iml
 
 # mac
