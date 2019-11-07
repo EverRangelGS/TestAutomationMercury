@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class CommonConditions {
     //-----------------------------------Global Variables-----------------------------------
     //Declare a Webdriver variable
-    private boolean headLessSelected = true;
+    private boolean headLessSelected = false;
     WebDriver driver;
     ArrayList<String> tabs;
 
