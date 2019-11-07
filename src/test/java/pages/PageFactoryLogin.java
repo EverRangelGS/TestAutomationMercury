@@ -15,7 +15,7 @@ public class PageFactoryLogin {
     private WebDriver driver;
 
     //PageFactory annotations large
-    /*
+
     @FindBy(how = How.NAME, using = "userName")
     private WebElement userFieldElement;
     @FindBy(how = How.NAME, using = "password")
@@ -23,9 +23,10 @@ public class PageFactoryLogin {
     @FindBy(how = How.NAME, using = "login")
     private WebElement loginBtnElement;
     @FindBy(how = How.TAG_NAME, using = "input")
-    private List<WebElement> fields; */
+    private List<WebElement> fields;
 
     //PageFactory annotations short
+    /*
     @FindBy(name= "userName")
     private WebElement userFieldElement;
     @FindBy(name = "password")
@@ -33,7 +34,7 @@ public class PageFactoryLogin {
     @FindBy(name = "login")
     private WebElement loginBtnElement;
     @FindBy(tagName = "input")
-    private List<WebElement> fields;
+    private List<WebElement> fields;*/
 
     public PageFactoryLogin(WebDriver driver) {
         this.driver = driver;
