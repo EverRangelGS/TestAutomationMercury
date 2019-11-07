@@ -13,8 +13,14 @@ bw-outputs/
 .scannerwork
 
 # IntelliJ
-.idea
+#.idea
+.idea/sonarlint/
 *.iml
 
 # mac
 .DS_Store
+
+#Remover archivos ya almacenados en git
+#git rm -r --cached  node_modules
+#git commit -a -m "removed node_modules"
+#git push origin master
