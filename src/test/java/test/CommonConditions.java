@@ -29,7 +29,8 @@ public class CommonConditions {
         //Driver selected by OS
         String driverByOS;
         if(System.getProperty("os.name").equals("Windows 10")){
-            driverByOS = "drivers/chromedriver.exe"; System.out.println("Driver selected: "+System.getProperty("os.name"));
+            //driverByOS = "drivers/chromedriver.exe"; System.out.println("Driver selected: "+System.getProperty("os.name"));
+            driverByOS = "E:\\drivers\\chromedriver.exe"; System.out.println("Driver selected: "+System.getProperty("os.name"));
         }
         else driverByOS = "drivers/chromedriver";
         System.setProperty("webdriver.chrome.driver",driverByOS);
