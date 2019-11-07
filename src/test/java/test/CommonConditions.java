@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class CommonConditions {
     //-----------------------------------Global Variables-----------------------------------
     //Declare a Webdriver variable
-    private boolean headLessSelected = true;
+    private boolean headLessSelected = false;
     WebDriver driver;
     ArrayList<String> tabs;
 
@@ -25,14 +25,14 @@ public class CommonConditions {
     public void setupTest () {
         DesiredCapabilities caps = new DesiredCapabilities(); //since selenium 3.0
         //We have selected the driver in System Path
-        /*
+
         //Driver selected by OS
         String driverByOS;
         if(System.getProperty("os.name").equals("Windows 10")){
             driverByOS = "drivers/chromedriver.exe"; System.out.println("Driver selected: "+System.getProperty("os.name"));
         }
         else driverByOS = "drivers/chromedriver";
-        System.setProperty("webdriver.chrome.driver",driverByOS); */
+        System.setProperty("webdriver.chrome.driver",driverByOS);
 
         //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^HEADLESS
         if(headLessSelected){
