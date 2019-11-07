@@ -1,6 +1,0 @@
-pages\PageLogon.class
-helpers\CambiarTabs.class
-pages\PageLogin.class
-pages\PageReservation.class
-helpers\Helpers.class
-test\Tests.class
