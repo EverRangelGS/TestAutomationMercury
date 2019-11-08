@@ -6,7 +6,7 @@ import pages.PageReservation;
 
 public class Reservation extends CommonConditions {
 
-    @Test(enabled = true, description = "Seleccionando combos en pagina de reservacion")
+    @Test(enabled = false, description = "Seleccionando combos en pagina de reservacion")
     public void seleccionCombos () {
         PageFactoryLogin pageLogin = new PageFactoryLogin(driver);
         //PageLogin pageLogin = new PageLogin(driver);

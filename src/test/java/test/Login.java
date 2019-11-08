@@ -34,7 +34,7 @@ public class Login extends CommonConditions{
         pageLogin.verifyFields();
     }
 
-    @Test(enabled = true, description = "Verificar titulo correcto en el login")
+    @Test(enabled = false, description = "Verificar titulo correcto en el login")
     public void pruebaVerificarTitulo () {
         PageFactoryLogin pageLogin = new PageFactoryLogin(driver);
         //PageLogin pageLogin = new PageLogin(driver);
