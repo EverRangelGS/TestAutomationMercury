@@ -1,3 +1,3 @@
 # TestAutomationMercury
 
-Este es mi Proyecto de prueba de Selenium
+Este es mi proyecto de prueba de Selenium
