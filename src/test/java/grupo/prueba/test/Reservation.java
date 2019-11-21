@@ -1,8 +1,9 @@
-package test;
+package grupo.prueba.test;
 
+import grupo.prueba.test.CommonConditions;
 import org.testng.annotations.Test;
-import pages.PageFactoryLogin;
-import pages.PageReservation;
+import grupo.prueba.pages.PageFactoryLogin;
+import grupo.prueba.pages.PageReservation;
 
 public class Reservation extends CommonConditions {
 

@@ -4,8 +4,8 @@
 <suite name="AllTestsSuite">
     <test name="My First Selenium TestNG Test">
         <classes>
-            <class name="test.Login"/>
-            <class name="test.Reservation"/>
+            <class name="grupo.prueba.test.Login"/>
+            <class name="grupo.prueba.test.Reservation"/>
         </classes>
     </test>
 </suite>

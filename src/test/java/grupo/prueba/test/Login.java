@@ -1,17 +1,17 @@
-package test;
+package grupo.prueba.test;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
-import pages.PageFactoryLogin;
-import pages.PageLogon;
-import pages.PageReservation;
+import grupo.prueba.pages.PageFactoryLogin;
+import grupo.prueba.pages.PageLogon;
+import grupo.prueba.pages.PageReservation;
 
-public class Login extends CommonConditions{
+public class Login extends CommonConditions {
     private static final Logger LOGGER = LogManager.getLogger(Login.class);
 
     @Test(enabled = true, description = "Login Incorrecto")
-    public void loginIncorrecto () {                                                                                    LOGGER.info("Estoy en método LoginIncorrecto");
+    public void loginIncorrecto () {                                                                                    LOGGER.info("Estoy en test 'LoginIncorrecto'");
         //CambiarTabs cambiarTabs = new CambiarTabs(driver); cambiarTabs.intercalarTabs();
 
         PageFactoryLogin pageLogin = new PageFactoryLogin(driver);

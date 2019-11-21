@@ -1,4 +1,4 @@
-package helpers;
+package grupo.prueba.helpers;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

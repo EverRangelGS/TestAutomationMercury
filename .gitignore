@@ -21,6 +21,7 @@ bw-outputs/
 
 
 allure-results/
+logs/
 
 #Remover archivos ya almacenados en git
 #git rm -r --cached  node_modules

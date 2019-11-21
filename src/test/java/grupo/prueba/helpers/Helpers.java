@@ -1,4 +1,4 @@
-package helpers;
+package grupo.prueba.helpers;
 
 public class Helpers {
 
