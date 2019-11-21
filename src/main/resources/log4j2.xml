@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="LOG_PATTERN">[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</Property>
+        <Property name="basePath">logs</Property> <!--C:\\logs-->
+    </Properties>
+
+    <Appenders>
+        <RollingFile name="fileLogger" fileName="${basePath}/app-info.log" filePattern="${basePath}/app-info-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="19500KB" />
+            </Policies>
+        </RollingFile>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{${LOG_PATTERN}}" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="grupo.prueba" additivity="true" level="debug" >
+            <AppenderRef ref="fileLogger" level="info" />
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+</Configuration>
