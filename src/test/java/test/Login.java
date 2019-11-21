@@ -1,14 +1,17 @@
 package test;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 import pages.PageFactoryLogin;
 import pages.PageLogon;
 import pages.PageReservation;
 
 public class Login extends CommonConditions{
+    private static final Logger LOGGER = LogManager.getLogger(Login.class);
 
     @Test(enabled = true, description = "Login Incorrecto")
-    public void loginIncorrecto () {
+    public void loginIncorrecto () {                                                                                    LOGGER.info("Estoy en método LoginIncorrecto");
         //CambiarTabs cambiarTabs = new CambiarTabs(driver); cambiarTabs.intercalarTabs();
 
         PageFactoryLogin pageLogin = new PageFactoryLogin(driver);
