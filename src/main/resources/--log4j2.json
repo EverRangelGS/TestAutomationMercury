@@ -1,39 +1,30 @@
 {
   "configuration":
   {
+    "properties": {
+      "property": [
+        {"name": "LOG_PATH", "value" : "logs"},
+        {"name": "LOG_PATTERN", "value" : "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"}
+      ]
+    },
+
     "appenders": {
-      "RandomAccessFile": {
-        "name": "FILE",
-        "fileName": "logs/app-json.log",
-        "PatternLayout": {
-          "pattern": "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
-        }
+      "RollingFile": {
+        "name": "LOGFILE", "fileName": "${LOG_PATH}/app-json.log", "filePattern": "${LOG_PATH}/app-json-%d{yyyy-MM-dd}.log",
+        "PatternLayout": { "pattern": "${LOG_PATTERN}" },
+        "SizeBasedTriggeringPolicy": { "size": "19500KB" }
       },
       "Console": {
-        "name": "STDOUT",
-        "PatternLayout": {
-          "pattern": "%highlight{[%-5level] %d{yyyy-MM-dd HH:mm:ss} [%t] %c{1} - %msg%n}"
-        }
+        "name": "STDOUT", "PatternLayout": { "pattern": "%highlight{${LOG_PATTERN}}" }
       }
     },
+
     "loggers": {
       "logger": {
-        "name": "grupo.prueba",
-        "level": "debug",
-        "AppenderRef": [
-          {
-            "ref": "FILE",
-            "level": "info"
-          }
-        ]
+        "name": "grupo.prueba", "level": "debug", "AppenderRef": {"ref": "LOGFILE", "level": "info"}
       },
       "root": {
-        "level": "debug",
-        "AppenderRef": [
-          {
-            "ref": "STDOUT"
-          }
-        ]
+        "level": "debug", "AppenderRef": { "ref": "STDOUT" }
       }
     }
   }
