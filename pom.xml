@@ -6,7 +6,8 @@
 
   <groupId>grupoPrueba</groupId>
   <artifactId>TestAutomationMercury</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version> <!--  <version>${version}</version>-->
+  <packaging>jar</packaging>
 
   <name>TestAutomationMercury</name>
   <url>http://newtours.demoaut.com/</url>
@@ -20,8 +21,10 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <!--Sonar-->
     <sonar.host.url>http://localhost:9000</sonar.host.url>
-    <sonar.login>129815fc8274b4d257c81e21e7282aee8fa4ff48</sonar.login>
+    <sonar.login>4e9650ff15aeff36e928fe7899c5e9afe90292cb</sonar.login>
     <sonar.language>java</sonar.language>
+<!--    <sonar.sources>src/main</sonar.sources>-->
+<!--    <sonar.tests>src/test</sonar.tests>-->
   </properties>
 
 
@@ -66,6 +69,15 @@
       </dependency>
 
   </dependencies>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </reporting>
 
 
   <build>
@@ -128,7 +140,7 @@
         <plugin>
           <groupId>org.sonarsource.scanner.maven</groupId>
           <artifactId>sonar-maven-plugin</artifactId>
-          <version>3.2</version>
+          <version>3.6.0.1398</version>
         </plugin>
 
       </plugins>
