@@ -9,8 +9,21 @@
   <version>1.0-SNAPSHOT</version> <!--  <version>${version}</version>-->
   <packaging>jar</packaging>
 
+<!--  <build>-->
+<!--    <finalName>nombreAppFinal</finalName>-->
+<!--  </build>-->
+
   <name>TestAutomationMercury</name>
   <url>http://newtours.demoaut.com/</url>
+
+
+  <!--  Using the internal repository is quite simple. Simply make a change to add a repositories element:-->
+<!--  <repositories>-->
+<!--    <repository>-->
+<!--      <id>my-internal-site</id>-->
+<!--      <url>http://myserver/repo</url>-->
+<!--    </repository>-->
+<!--  </repositories>-->
 
 
   <properties>
@@ -20,7 +33,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <!--Sonar-->
-    <sonar.host.url>http://localhost:9000</sonar.host.url>
+    <sonar.host.url>http://10.51.206.216:9000</sonar.host.url>
     <sonar.login>4e9650ff15aeff36e928fe7899c5e9afe90292cb</sonar.login>
     <sonar.language>java</sonar.language>
 <!--    <sonar.sources>src/main</sonar.sources>-->
@@ -34,6 +47,7 @@
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
         <version>3.12.0</version>
+        <scope>test</scope>
       </dependency>
 
       <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -69,6 +83,7 @@
       </dependency>
 
   </dependencies>
+
 
   <reporting>
     <plugins>
@@ -147,4 +162,18 @@
     </pluginManagement>
   </build>
 
+<!--  <distributionManagement>-->
+<!--    <repository>-->
+<!--      <id>martifactory_baz</id>-->
+<!--      <name>Release Repository</name>-->
+<!--      <url>https://openwebinars.net/artifactory/libs-release-local</url>-->
+<!--    </repository>-->
+<!--    <snapshotRepository>-->
+<!--      <id>martifactory_baz</id>-->
+<!--      <name>Snapshot Repository</name>-->
+<!--      <url>https://openwebinars.net/artifactory/libs-snapshot-local</url>-->
+<!--    </snapshotRepository>-->
+<!--  </distributionManagement>-->
+
 </project>
+
