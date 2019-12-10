@@ -27,17 +27,19 @@
 
 
   <properties>
+    <!--Proxy-->
+    <http.nonProxyHosts>localhost|127.0.0.1|10.51.*</http.nonProxyHosts>
     <!--Maven-->
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <!--Sonar-->
-    <sonar.host.url>http://10.51.206.216:9000</sonar.host.url>
-    <sonar.login>4e9650ff15aeff36e928fe7899c5e9afe90292cb</sonar.login>
     <sonar.language>java</sonar.language>
-<!--    <sonar.sources>src/main</sonar.sources>-->
-<!--    <sonar.tests>src/test</sonar.tests>-->
+    <sonar.sources>src/main</sonar.sources>
+    <sonar.tests>src/test</sonar.tests>
+<!--    <sonar.host.url>http://localhost:9000</sonar.host.url>-->
+<!--    <sonar.login>4e9650ff15aeff36e928fe7899c5e9afe90292cb</sonar.login>-->
   </properties>
 
 
@@ -164,12 +166,12 @@
 
 <!--  <distributionManagement>-->
 <!--    <repository>-->
-<!--      <id>martifactory_baz</id>-->
+<!--      <id>artifactory_baz</id>-->
 <!--      <name>Release Repository</name>-->
 <!--      <url>https://openwebinars.net/artifactory/libs-release-local</url>-->
 <!--    </repository>-->
 <!--    <snapshotRepository>-->
-<!--      <id>martifactory_baz</id>-->
+<!--      <id>artifactory_baz</id>-->
 <!--      <name>Snapshot Repository</name>-->
 <!--      <url>https://openwebinars.net/artifactory/libs-snapshot-local</url>-->
 <!--    </snapshotRepository>-->
