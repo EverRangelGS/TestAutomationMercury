@@ -6,7 +6,7 @@
 
   <groupId>grupoPrueba</groupId>
   <artifactId>TestAutomationMercury</artifactId>
-  <version>1.0-SNAPSHOT</version> <!--  <version>${version}</version>-->
+  <version>1.0-SNAPSHOT-${build.number}</version> <!--  <version>${version}</version>-->
   <packaging>jar</packaging>
 
 <!--  <build>-->
@@ -28,7 +28,7 @@
 
   <properties>
     <!--Proxy-->
-    <http.nonProxyHosts>localhost|127.0.0.1|10.51.*</http.nonProxyHosts>
+    <http.nonProxyHosts>localhost|127.0.0.1|10.*</http.nonProxyHosts>
     <!--Maven-->
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -121,7 +121,7 @@
           </configuration>
         </plugin>
 
-        <!--
+
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
@@ -133,6 +133,21 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <!--
+          <groupId>org.apache.Maven.plugins</groupId>
+          <artifactId>Maven-jar-plugin</artifactId>
+          <version>2.5</version>
+          <configuration>
+            <archive>
+              <index>true</index>
+              <manifest>
+                <addClasspath>true</addClasspath>
+              </manifest>
+              <manifestEntries>
+                <Implementation-Version>${build.number}</Implementation-Version>
+              </manifestEntries>
+            </archive>
+          </configuration> -->
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
@@ -141,7 +156,7 @@
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
-        </plugin> -->
+        </plugin>
 
         <!--Site lifecycle
         <plugin>
@@ -164,18 +179,18 @@
     </pluginManagement>
   </build>
 
-<!--  <distributionManagement>-->
-<!--    <repository>-->
-<!--      <id>artifactory_baz</id>-->
-<!--      <name>Release Repository</name>-->
-<!--      <url>https://openwebinars.net/artifactory/libs-release-local</url>-->
-<!--    </repository>-->
-<!--    <snapshotRepository>-->
-<!--      <id>artifactory_baz</id>-->
-<!--      <name>Snapshot Repository</name>-->
-<!--      <url>https://openwebinars.net/artifactory/libs-snapshot-local</url>-->
-<!--    </snapshotRepository>-->
-<!--  </distributionManagement>-->
+  <distributionManagement>
+    <repository>
+      <id>artifactory_baz</id>
+      <name>TestAutomation-Releases</name>
+      <url>http://artifactory.colaboracionsimba.net:8081/</url>
+    </repository>
+    <snapshotRepository>
+      <id>artifactory_baz</id>
+      <name>TestAutomation-Snapshots</name>
+      <url>http://artifactory.colaboracionsimba.net:8081/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
 
