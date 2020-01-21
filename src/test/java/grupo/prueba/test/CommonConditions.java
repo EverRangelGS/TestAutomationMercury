@@ -3,6 +3,8 @@ package grupo.prueba.test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -23,13 +25,13 @@ public class CommonConditions {
     //-----------------------------------Test Setup-----------------------------------
     @BeforeMethod
     public void setupTest () {
+
         DesiredCapabilities caps = new DesiredCapabilities(); //since selenium 3.0
         //We have selected the driver in System Path
 
         //Driver selected by OS
         String driverByOS;
         if(System.getProperty("os.name").equals("Windows 10")){
-            //driverByOS = "drivers/chromedriver.exe"; System.out.println("Driver selected: "+System.getProperty("os.name"));
             driverByOS = "E:\\Software Repository\\Drivers Selenium\\Widnows10\\chromedriver.exe"; System.out.println("Driver selected: "+System.getProperty("os.name"));
         }
         else driverByOS = "drivers/chromedriver";
@@ -56,6 +58,15 @@ public class CommonConditions {
             //driver.manage().window().setPosition(new Point(50,50));
              */
         }
+
+
+        /* //With Firefox
+        System.setProperty("webdriver.gecko.driver", "E:\\Software Repository\\Drivers Selenium\\Widnows10\\geckodriver.exe");
+        FirefoxOptions options = new FirefoxOptions();
+        options.setCapability("marionette",true);
+        driver = new FirefoxDriver(options);
+        driver.manage().window().maximize();
+        */
 
         driver.navigate().to(testURL);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
