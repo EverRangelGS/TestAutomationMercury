@@ -9,10 +9,6 @@
   <version>1.0-SNAPSHOT-${build.number}</version> <!--  <version>${version}</version>-->
   <packaging>jar</packaging>
 
-<!--  <build>-->
-<!--    <finalName>nombreAppFinal</finalName>-->
-<!--  </build>-->
-
   <name>TestAutomationMercury</name>
   <url>http://newtours.demoaut.com/</url>
 
@@ -27,8 +23,10 @@
 
 
   <properties>
+    <!--build properties-->
+    <build.number>1</build.number>
     <!--Proxy-->
-    <http.nonProxyHosts>localhost|127.0.0.1|10.*</http.nonProxyHosts>
+<!--    <http.nonProxyHosts>localhost|10.82.*|10.51.*|10.85.*</http.nonProxyHosts>-->
     <!--Maven-->
     <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -84,6 +82,13 @@
         <version>2.10.0</version>
       </dependency>
 
+      <!-- Artifactory -->
+      <dependency>
+        <groupId>org.jfrog.buildinfo</groupId>
+        <artifactId>artifactory-maven-plugin</artifactId>
+        <version>2.2.1</version>
+      </dependency>
+
   </dependencies>
 
 
@@ -98,6 +103,8 @@
 
 
   <build>
+    <!-- <finalName>nombreAppFinal</finalName>-->  <!--Nombre final de la app al concluirla-->
+
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
 
@@ -175,20 +182,50 @@
           <version>3.6.0.1398</version>
         </plugin>
 
+        <!-- Artifactory
+        <plugin>
+          <groupId>org.jfrog.buildinfo</groupId>
+          <artifactId>artifactory-maven-plugin</artifactId>
+          <version>2.6.1</version>
+          <inherited>false</inherited>
+          <executions>
+            <execution>
+              <id>build-info</id>
+              <goals>
+                <goal>publish</goal>
+              </goals>
+              <configuration>
+                <deployProperties>
+                  <gradle>awesome</gradle>
+                  <review.team>qa</review.team>
+                </deployProperties>
+                <publisher>
+                  <contextUrl>http://artifactory.colaboracionsimba.net:8081/</contextUrl>
+                  <username>calidadsw</username>
+                  <password>CALIDADSW2019*</password>
+                  <repoKey>libs-release-local</repoKey>
+                  <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+                </publisher>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        -->
       </plugins>
     </pluginManagement>
   </build>
 
+  <!-- Datos repositorio Artifactory-->
   <distributionManagement>
     <repository>
       <id>artifactory_baz</id>
-      <name>TestAutomation-Releases</name>
-      <url>http://artifactory.colaboracionsimba.net:8081/</url>
+      <name>TestQA-Releases</name>
+      <url>http://artifactory.colaboracionsimba.net:8081/artifactory/libs-release-local</url>
     </repository>
     <snapshotRepository>
       <id>artifactory_baz</id>
-      <name>TestAutomation-Snapshots</name>
-      <url>http://artifactory.colaboracionsimba.net:8081/</url>
+      <name>TestQA-Snapshots</name>
+      <url>http://artifactory.colaboracionsimba.net:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
   </distributionManagement>
 
